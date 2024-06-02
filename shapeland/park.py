@@ -5,12 +5,12 @@ from guest import Guest
 
 def main():
     env = S.Environment()
-    ride = Ride(env, 2, 5)
+    rides = [Ride(env, 1, 2, 5), Ride(env, 2, 2, 8)]
 
-    guests = [Guest(env, i) for i in range(10)]
+    guests = [Guest(env, i, 10) for i in range(10)]
 
     for guest in guests:
-        env.process(guest.run([ride]))
+        env.process(guest.run(rides))
 
     env.run(until=26)
 
