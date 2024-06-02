@@ -22,7 +22,7 @@ def main():
         Ride(env, "Eta", 12, int(2400 * 12 / 60)),
     ]
 
-    guests = [Guest(env, i, 1000) for i in range(2000)]
+    guests = [Guest(env, i, 10) for i in range(2000)]
 
     for guest in guests:
         env.process(guest.run(rides))
